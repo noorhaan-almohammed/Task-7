@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="/logo.svg" type="image/svg+xml" />
-      <body className={`${openSans.variable}`}>
+      <body className={`overflow-x-hidden ${openSans.variable}`}>
         <LoaderWrapper>
           <NavBar links={links} />
           {children}

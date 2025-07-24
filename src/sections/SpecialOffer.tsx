@@ -10,8 +10,8 @@ function SpecialOffer({ content }: { content: SpecialOffers }) {
       <div className="py-4 xs:py-8 xl:py-15 relative flex items-center">
         <div
           data-aos="slide-left"
-          data-aos-duration="1000"
-          data-aos-delay="200"
+          data-aos-duration="800"
+          data-aos-delay="100"
           className="z-1 w-full sm:w-80 md:h-80 md:w-1/2 lg:w-4/9 lg:h-82.5 md:justify-evenly xl:w-[570px] gap-4 xl:gap-8 p-4.5 xl:p-7.5 bg-[#ffffff6d] lg:bg-[#ffffff4d] rounded-3xl flex flex-col items-center justify-center"
         >
           <h3 className="font-extrabold text-xl xs:text-2xl xl:text-[32px] xl:leading-[100%] text-center text-grey">

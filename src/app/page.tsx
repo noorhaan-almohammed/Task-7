@@ -11,7 +11,7 @@ import TourPackages from "@/sections/TourPackages";
 
 export default function Home() {
   return (
-    <div className="font-open-sans">
+    <div className="overflow-x-hidden font-open-sans">
       <Hero
         img="/images/hero_home.webp"
         title="Enjoy in the best way!"
