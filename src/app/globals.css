@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --font-podcast: 'Pocast';
+  --font-open-sans: "open-sans"
+}
+
+@theme inline {
+  /* fonts */
+  --font-open-sans: var(--font-open-sans);
+  --font-podcast: var(--font-podcast);
+
+  /* colors */
+  --color-orange: #FA8B02;
+  --color-grey: #333;
+  --color-foreground: var(--foreground);
+  
+  --breakpoint-xs: 21.5rem;
+}
+
+@layer utilities {
+.show-md-minh-770,
+.show-maxh-769 {
+  display: none;
+}
+
+  @media (min-width: 780px) and (min-height: 750px) {
+    .show-md-minh-770 {
+      display: block;
+    }
+  }
+
+  @media (max-height: 749px) {
+    .show-maxh-769 {
+      display: block;
+    }
+  }
+  @media (max-width: 779px){
+     .show-maxh-769 {
+      display: block;
+    }
+  }
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;     
+}
+@font-face {
+  font-family: 'Pocast';
+  src: url('../fonts/Podcast.ttf') format('truetype');
+}
+
+.custom-time-picker .react-time-picker__inputGroup input ,
+.custom-time-picker .react-time-picker__inputGroup select {
+  padding: 4px;
+  border: none !important;
+  font-size: 0.875rem; 
+  background-color: unset!important;
+}
+.custom-time-picker .react-time-picker__wrapper {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.custom-time-picker .react-time-picker__inputGroup input:focus,
+.custom-time-picker .react-time-picker__inputGroup input:focus-visible,
+.custom-time-picker .react-time-picker__inputGroup select:focus,
+.custom-time-picker .react-time-picker__inputGroup select:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
