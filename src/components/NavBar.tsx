@@ -8,7 +8,7 @@ import AuthModal from "./auth/AuthModal";
 import SearchField from "./TourSearchComponents/SearchField";
 
 function NavBar({ links }: { links: { href: string; label: string }[] }) {
-  const pathname = usePathname(); // <-- ✅
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
   const [authType, setAuthType] = useState<"login" | "signup">("signup");
