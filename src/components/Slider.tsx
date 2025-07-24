@@ -8,11 +8,19 @@ import Card from "./common/Card";
 import TestimonialCard from "./common/TestimonialCard";
 
 export default function Slider({
-  cards, num_Of_Cards_in_768 = 1 , num_Of_Cards_in_1280 = 2, num_Of_Cards_in_1700 = 3, num_Of_Cards_in_other = 4, gap_cards = "gap-8"
+  cards,
+  num_Of_Cards_in_768 = 1,
+  num_Of_Cards_in_1280 = 2,
+  num_Of_Cards_in_1700 = 3,
+  num_Of_Cards_in_other = 4,
+  gap_cards = "gap-8",
 }: {
   cards: SliderItem[] | Testimonial[];
-  num_Of_Cards_in_768 ?: number , num_Of_Cards_in_1280 ?: number ,
-  num_Of_Cards_in_1700 ?: number, num_Of_Cards_in_other ?: number , gap_cards ?: string
+  num_Of_Cards_in_768?: number;
+  num_Of_Cards_in_1280?: number;
+  num_Of_Cards_in_1700?: number;
+  num_Of_Cards_in_other?: number;
+  gap_cards?: string;
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(4);
@@ -49,12 +57,12 @@ export default function Slider({
     }
   };
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       nextSlide();
-  //     }, 4000);
-  //     return () => clearInterval(interval);
-  //   }, [cards.length]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [cards.length]);
 
   const visibleCards = Array.from({ length: cardsPerView }).map((_, i) => {
     const index = (currentIndex + i) % cards.length;
@@ -63,9 +71,7 @@ export default function Slider({
 
   return (
     <>
-      <div
-        className="absolute top-0 right-4 lg:right-12 xl:right-32 2xl:right-62.5 hidden md:flex justify-between items-center gap-5"
-      >
+      <div className="absolute top-0 right-4 lg:right-12 xl:right-32 2xl:right-62.5 hidden md:flex justify-between items-center gap-5">
         <button
           className={`flex items-center justify-center w-12.5 h-12.5 rounded-[50%] ${
             isAtStart
@@ -95,8 +101,24 @@ export default function Slider({
       <div className={`flex items-start justify-center ${gap_cards}`}>
         {visibleCards.map((card, index) =>
           "title" in card ? (
-            <Card key={index} item={card} />
-          ) : <TestimonialCard key={index} testimonial={card}/>
+            <div
+              key={index}
+              data-aos="fade-down"
+              data-aos-duration="800"
+              data-aos-delay={index * 100}
+            >
+              <Card item={card} />
+            </div>
+          ) : (
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-duration="800"
+              data-aos-delay={index * 100}
+            >
+              <TestimonialCard testimonial={card} />
+            </div>
+          )
         )}
       </div>
 

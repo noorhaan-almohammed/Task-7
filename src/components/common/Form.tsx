@@ -7,7 +7,12 @@ import SearchField from "../TourSearchComponents/SearchField";
 
 export default function Form() {
   return (
-    <form className=" space-y-7.5 p-4.5 xl:p-7.5 flex items-center flex-col justify-center w-fit  bg-[#ffffff6d] lg:bg-[#ffffff4d] rounded-xl md:rounded-3xl ">
+    <form
+     className=" space-y-7.5 p-4.5 xl:p-7.5 flex items-center flex-col justify-center w-fit  bg-[#ffffff6d] lg:bg-[#ffffff4d] rounded-xl md:rounded-3xl "
+      data-aos="fade-right"
+             data-aos-duration="800"
+             data-aos-delay="100"
+             >
       <div className="flex flex-col md:flex-row gap-7.5">
         <InputField
           label="Name and Surname"

@@ -6,10 +6,13 @@ function Services({ services }: { services: ServiceType[] }) {
   return (
     <Container>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        {services.map((service) => (
+        {services.map((service,index) => (
           <div
             key={service.id}
             className="flex flex-col gap-4 sm:gap-6 items-center"
+            data-aos="fade-down"
+            data-aos-duration="800"
+            data-aos-delay={index * 200}
           >
             <Image
               width={330}

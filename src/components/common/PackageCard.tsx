@@ -4,7 +4,12 @@ import BookBtn from "./BookBtn";
 
 function PackageCard({ content }: { content: tourPackagesType }) {
   return (
-    <div className=" flex flex-col items-stretch gap-4 relative rounded-3xl overflow-hidden border border-[#efefef] hover:shadow-lg bg-white ">
+    <div
+      className=" flex flex-col items-stretch gap-4 relative rounded-3xl overflow-hidden border border-[#efefef] hover:shadow-lg bg-white "
+      data-aos="fade-down"
+      data-aos-duration="800"
+      data-aos-delay="200"
+    >
       <img
         className="w-full sm:aspect-square object-cover"
         src={content.image}

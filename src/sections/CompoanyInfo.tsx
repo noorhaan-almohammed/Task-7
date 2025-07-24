@@ -3,7 +3,15 @@ import StateCard from "@/components/common/StateCard";
 import { CompoanyInfotype } from "@/Types/type";
 import Image from "next/image";
 
-function CompoanyInfo({ content , imgClass_1,imgClass_2}: { content: CompoanyInfotype , imgClass_1: string , imgClass_2: string }) {
+function CompoanyInfo({
+  content,
+  imgClass_1,
+  imgClass_2,
+}: {
+  content: CompoanyInfotype;
+  imgClass_1: string;
+  imgClass_2: string;
+}) {
   return (
     <Container>
       <div className="flex flex-col lg:flex-row  justify-between items-center gap-10 xl:gap-17.5">
@@ -12,7 +20,10 @@ function CompoanyInfo({ content , imgClass_1,imgClass_2}: { content: CompoanyInf
           height={600}
           src={content.image}
           alt="about_picture"
-          className={`hidden lg:block rounded-3xl ${imgClass_1}`} 
+          data-aos="flip-right"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+          className={`hidden lg:block rounded-3xl ${imgClass_1}`}
         />
 
         <div className="w-full flex flex-col gap-6 sm:gap-8 2xl:w-1/2">
@@ -29,6 +40,9 @@ function CompoanyInfo({ content , imgClass_1,imgClass_2}: { content: CompoanyInf
                 height={600}
                 src={content.image}
                 alt="about_picture"
+                data-aos="flip-right"
+                data-aos-duration="1000"
+                data-aos-delay="200"
                 className={`lg:hidden ${imgClass_2}`}
               />
             </div>

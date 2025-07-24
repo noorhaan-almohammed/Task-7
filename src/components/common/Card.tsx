@@ -9,7 +9,7 @@ function Card({ item }: { item: SliderItem }) {
   return (
     <div
       key={item.id}
-      className="flex flex-col gap-3 sm:gap-4 items-start justify-start w-full"
+      className="flex flex-col gap-3 sm:gap-4 items-start justify-start w-full 2xl:max-w-80"
     >
       <Image
         src={item.image}
@@ -33,7 +33,6 @@ function Card({ item }: { item: SliderItem }) {
           </span>
         </div>
 
-        {/* Schedule and Capacity */}
         <div className="flex justify-between items-center w-full text-sm sm:text-base text-orange opacity-60 font-semibold">
           <div className="flex items-center gap-1 sm:gap-1.5 ">
             <Date />

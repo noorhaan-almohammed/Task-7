@@ -1,12 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useState, useRef } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useEffect, useRef } from 'react';
 
 const LogoLoader = () => {
-  const [showLoader, setShowLoader] = useState(true);
   const animationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -15,15 +12,7 @@ const LogoLoader = () => {
     let count = 0;
 
     const runAnimation = () => {
-      if (count >= maxRepeats) {
-        setShowLoader(false);
-
-        setTimeout(() => {
-          AOS.refresh(); 
-        }, 5000);
-
-        return;
-      }
+      if (count >= maxRepeats) return;
 
       if (animationRef.current) {
         animationRef.current.style.animationDuration = `${animationDuration / 1000}s`;
@@ -39,16 +28,9 @@ const LogoLoader = () => {
     runAnimation();
   }, []);
 
-  if (!showLoader) return null;
-
   return (
     <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
-      <div
-        ref={animationRef}
-        data-aos="flip-left"
-        className="animate-logo spinJump"
-        data-aos-duration="2000"
-      >
+      <div ref={animationRef} className="animate-logo spinJump">
         <Image
           src="/logo.svg"
           alt="Logo"

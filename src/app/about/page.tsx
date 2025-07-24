@@ -12,7 +12,7 @@ function About() {
         img="/images/about_hero.webp"
         title="Our team cares about your full relax"
         description="Enjoy our services for your trip anytimeBut I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness."
-        gap="gap-6"
+        gap="gap-10"
       >
         <Link
           href="/tour-packages"
