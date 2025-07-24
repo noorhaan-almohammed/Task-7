@@ -7,24 +7,30 @@ function CompoanyInfo({
   content,
   imgClass_1,
   imgClass_2,
+  borderClass =""
 }: {
   content: CompoanyInfotype;
   imgClass_1: string;
   imgClass_2: string;
+  borderClass ?: string;
 }) {
   return (
     <Container>
       <div className="flex flex-col lg:flex-row  justify-between items-center gap-10 xl:gap-17.5">
-        <Image
-          width={408}
-          height={600}
-          src={content.image}
-          alt="about_picture"
+        <div
+          className={`${borderClass}`}
           data-aos="flip-right"
           data-aos-duration="1000"
-          data-aos-delay="200"
-          className={`hidden lg:block rounded-3xl ${imgClass_1}`}
-        />
+          data-aos-delay="100"
+        >
+          <Image
+            width={408}
+            height={600}
+            src={content.image}
+            alt="about_picture"
+            className={`hidden overflow-hidden lg:block rounded-3xl ${imgClass_1}`}
+          />
+        </div>
 
         <div className="w-full flex flex-col gap-6 sm:gap-8 2xl:w-1/2">
           <div className="flex flex-col gap-6 sm:gap-8">

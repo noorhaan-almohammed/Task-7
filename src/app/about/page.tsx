@@ -24,8 +24,9 @@ function About() {
       <div className="space-y-15 2xl:space-y-30 py-8 md:py-15 2xl:py-31">
         <CompoanyInfo
           content={compoany_about_info}
-          imgClass_1="aspect-[2] w-[500px] h-[412px] object-cover 2xl:w-[600px] 2xl:h-[512px]"
+          imgClass_1="rounded-3xl overflow-hidden aspect-[2] w-[500px] h-[412px] object-cover 2xl:w-[600px] 2xl:h-[512px]"
           imgClass_2="rounded-2xl aspect-[1.816] mt-5 w-full object-cover"
+          borderClass="bg-white border border-[#efefef] p-6.5 rounded-3xl"
         />
         <OverAll content={overAllData} />
         <CustomersSays />
