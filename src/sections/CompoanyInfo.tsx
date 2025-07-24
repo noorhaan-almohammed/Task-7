@@ -7,18 +7,20 @@ function CompoanyInfo({
   content,
   imgClass_1,
   imgClass_2,
-  borderClass =""
+  borderClass = "",
+  borderClass2 = "",
 }: {
   content: CompoanyInfotype;
   imgClass_1: string;
   imgClass_2: string;
-  borderClass ?: string;
+  borderClass?: string;
+  borderClass2?: string;
 }) {
   return (
     <Container>
       <div className="flex flex-col lg:flex-row  justify-between items-center gap-10 xl:gap-17.5">
         <div
-          className={`${borderClass}`}
+          className={`hidden lg:block ${borderClass}`}
           data-aos="flip-right"
           data-aos-duration="1000"
           data-aos-delay="100"
@@ -41,16 +43,20 @@ function CompoanyInfo({
               <h2 className="text-center lg:text-left font-extrabold text-2xl md:text-[32px] text-grey leading-tight lg:leading-[100%]">
                 {content.prief}
               </h2>
-              <Image
-                width={408}
-                height={600}
-                src={content.image}
-                alt="about_picture"
-                data-aos="flip-right"
+              <div
+                className={`lg:hidden ${borderClass2}`}
+                data-aos="flip-down"
                 data-aos-duration="1000"
-                data-aos-delay="200"
-                className={`lg:hidden ${imgClass_2}`}
-              />
+                data-aos-delay="100"
+              >
+                <Image
+                  width={408}
+                  height={600}
+                  src={content.image}
+                  alt="about_picture"
+                  className={`lg:hidden ${imgClass_2}`}
+                />
+              </div>
             </div>
             <p className=" text-base sm:text-lg text-grey leading-7 lg:leading-8">
               {content.details}
